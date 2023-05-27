@@ -1,13 +1,16 @@
 #include <iostream>
 using namespace std;
-
+//clase abstracta base para las figuras
 class Figura {
 public:
+    //metodos virtuales puros que seran utilizados por las clases derivadas
     virtual void dibujar() = 0;
     virtual float calcularArea() = 0;
-    virtual ~Figura() {}
 };
-
+//creacion de clases derivadas
+//cada una varia en el apartado de "dibujar", en donde dependiendo de la figura cambiará el cout
+//en "calculararea" cambia completamente debido a la formula y a los parametros que se ingreso 
+//      en el constructor de la clase derivada, ya que algunos tienen 1 parametro mientras otros tiene 2
 class Circulo : public Figura {
 private:
     float radio;
@@ -52,7 +55,7 @@ public:
         return (base * altura) / 2.0;
     }
 };
-
+//main para visualizar todas las funciones desarrolladas
 int main() {
     Circulo circulo(5.0);
     Rectangulo rectangulo(4.0, 3.0);
